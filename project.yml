@@ -10,6 +10,9 @@ packages:
   cmark-gfm:
     url: https://github.com/brokenhandsio/cmark-gfm.git
     from: "2.1.0"
+  Sparkle:
+    url: https://github.com/sparkle-project/Sparkle
+    from: "2.6.0"
 
 targets:
   Clearly:
@@ -21,6 +24,7 @@ targets:
     dependencies:
       - package: cmark-gfm
         product: cmark
+      - package: Sparkle
       - target: ClearlyQuickLook
         embed: true
     settings:
@@ -32,6 +36,8 @@ targets:
         SWIFT_VERSION: "5.9"
         CODE_SIGN_ENTITLEMENTS: Clearly/Clearly.entitlements
         INFOPLIST_FILE: Clearly/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        ENABLE_HARDENED_RUNTIME: YES
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
 
   ClearlyQuickLook:
@@ -50,6 +56,6 @@ targets:
         MARKETING_VERSION: "1.0.0"
         CURRENT_PROJECT_VERSION: "1"
         SWIFT_VERSION: "5.9"
-        GENERATE_INFOPLIST_FILE: YES
+        GENERATE_INFOPLIST_FILE: NO
         CODE_SIGN_ENTITLEMENTS: ClearlyQuickLook/ClearlyQuickLook.entitlements
         INFOPLIST_FILE: ClearlyQuickLook/Info.plist

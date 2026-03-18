@@ -1,8 +1,18 @@
 import SwiftUI
+import Sparkle
 
 @main
 struct ClearlyApp: App {
     @AppStorage("themePreference") private var themePreference = "system"
+    private let updaterController: SPUStandardUpdaterController
+
+    init() {
+        updaterController = SPUStandardUpdaterController(
+            startingUpdater: true,
+            updaterDelegate: nil,
+            userDriverDelegate: nil
+        )
+    }
 
     var body: some Scene {
         DocumentGroup(newDocument: MarkdownDocument()) { file in
@@ -11,6 +21,9 @@ struct ClearlyApp: App {
         .windowToolbarStyle(.unified(showsTitle: true))
         .defaultSize(width: 720, height: 900)
         .commands {
+            CommandGroup(after: .appInfo) {
+                CheckForUpdatesView(updater: updaterController.updater)
+            }
             CommandGroup(after: .textEditing) {
                 ViewModeCommands()
             }
@@ -40,7 +53,7 @@ struct ClearlyApp: App {
         }
 
         Settings {
-            SettingsView()
+            SettingsView(updater: updaterController.updater)
         }
     }
 }
@@ -58,5 +71,37 @@ struct ViewModeCommands: View {
             mode?.wrappedValue = .preview
         }
         .keyboardShortcut("2", modifiers: .command)
+    }
+}
+
+// MARK: - Sparkle Check for Updates menu item
+
+struct CheckForUpdatesView: View {
+    @ObservedObject private var checkForUpdatesViewModel: CheckForUpdatesViewModel
+    let updater: SPUUpdater
+
+    init(updater: SPUUpdater) {
+        self.updater = updater
+        self.checkForUpdatesViewModel = CheckForUpdatesViewModel(updater: updater)
+    }
+
+    var body: some View {
+        Button("Check for Updates…") {
+            updater.checkForUpdates()
+        }
+        .disabled(!checkForUpdatesViewModel.canCheckForUpdates)
+    }
+}
+
+final class CheckForUpdatesViewModel: ObservableObject {
+    @Published var canCheckForUpdates = false
+    private var observation: Any?
+
+    init(updater: SPUUpdater) {
+        observation = updater.observe(\.canCheckForUpdates, options: [.initial, .new]) { [weak self] updater, change in
+            DispatchQueue.main.async {
+                self?.canCheckForUpdates = updater.canCheckForUpdates
+            }
+        }
     }
 }

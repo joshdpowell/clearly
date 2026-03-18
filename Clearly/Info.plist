@@ -45,6 +45,10 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
+	<key>SUFeedURL</key>
+	<string>https://clearly.md/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>I1gi82QlV84mZZXMzxJyVMFKpDCmcatBYVSGcq1nJgE=</string>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>

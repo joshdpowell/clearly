@@ -1,29 +1,35 @@
+import Cocoa
 import QuickLookUI
-import UniformTypeIdentifiers
+import WebKit
 
-class PreviewProvider: QLPreviewProvider {
-    func providePreview(for request: QLFilePreviewRequest) async throws -> QLPreviewReply {
-        let url = request.fileURL
-        let accessing = url.startAccessingSecurityScopedResource()
-        defer { if accessing { url.stopAccessingSecurityScopedResource() } }
+class PreviewViewController: NSViewController, QLPreviewingController {
+    private var webView: WKWebView!
 
-        let markdownText = try String(contentsOf: url, encoding: .utf8)
-        let htmlBody = MarkdownRenderer.renderHTML(markdownText)
+    override func loadView() {
+        webView = WKWebView()
+        self.view = webView
+    }
 
-        let html = """
-        <!DOCTYPE html>
-        <html>
-        <head>
-        <meta charset="utf-8">
-        <style>\(PreviewCSS.css)</style>
-        </head>
-        <body>\(htmlBody)</body>
-        </html>
-        """
+    func preparePreviewOfFile(at url: URL, completionHandler handler: @escaping (Error?) -> Void) {
+        do {
+            let markdownText = try String(contentsOf: url, encoding: .utf8)
+            let htmlBody = MarkdownRenderer.renderHTML(markdownText)
 
-        let data = Data(html.utf8)
-        return QLPreviewReply(dataOfContentType: UTType.html, contentSize: CGSize(width: 800, height: 800)) { _ in
-            return data
+            let html = """
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta charset="utf-8">
+            <style>\(PreviewCSS.css)</style>
+            </head>
+            <body>\(htmlBody)</body>
+            </html>
+            """
+
+            webView.loadHTMLString(html, baseURL: nil)
+            handler(nil)
+        } catch {
+            handler(error)
         }
     }
 }
