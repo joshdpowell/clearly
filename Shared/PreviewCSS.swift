@@ -188,5 +188,39 @@ enum PreviewCSS {
         max-width: 100%;
         height: auto;
     }
+
+    .img-placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 24px 16px;
+        border-radius: 6px;
+        background-color: #F0F0F0;
+        border: 1px dashed #CCCCCC;
+        color: #999999;
+        font-size: 0.85em;
+        margin-bottom: 1em;
+        overflow: hidden;
+    }
+
+    .img-placeholder span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .img-placeholder svg {
+        flex-shrink: 0;
+        opacity: 0.5;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .img-placeholder {
+            background-color: #2A2A2A;
+            border-color: #444444;
+            color: #777777;
+        }
+    }
     """
 }
