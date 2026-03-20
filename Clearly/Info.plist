@@ -49,6 +49,8 @@
 	<string>https://clearly.md/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>I1gi82QlV84mZZXMzxJyVMFKpDCmcatBYVSGcq1nJgE=</string>
+	<key>SUEnableInstallerLauncherService</key>
+	<true/>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>

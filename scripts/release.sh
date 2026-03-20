@@ -107,6 +107,19 @@ xcodebuild -exportArchive \
   -exportOptionsPlist build/ExportOptions.plist \
   -exportPath build/export
 
+echo "🔑 Re-signing with sandbox entitlements..."
+sed "s/\$(PRODUCT_BUNDLE_IDENTIFIER)/$BUNDLE_ID/g" Clearly/Clearly.entitlements > build/Clearly.entitlements
+codesign -f -s "$SIGNING_IDENTITY" -o runtime \
+  --entitlements build/Clearly.entitlements \
+  build/export/Clearly.app
+
+# Verify mach-lookup entitlements survived
+if ! codesign -d --entitlements :- build/export/Clearly.app 2>/dev/null | grep -q "mach-lookup"; then
+  echo "❌ mach-lookup entitlements missing after re-sign. Aborting."
+  exit 1
+fi
+echo "✅ Entitlements verified."
+
 echo "📦 Creating DMG..."
 hdiutil create -volname "Clearly" \
   -srcfolder build/export/Clearly.app \
