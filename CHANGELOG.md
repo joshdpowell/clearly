@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-03-20
+- Export your documents as PDF or send them to a printer
+- Mermaid diagrams now render in preview mode
+- Markdown files open correctly from Finder and other apps
+
 ## [1.2.1] - 2026-03-19
 - Fixed auto-update failing with "error launching the installer"
 
