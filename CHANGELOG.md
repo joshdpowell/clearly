@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [1.6.1] - 2026-03-23
+- Markdown files are no longer greyed out in the Open panel on some systems
+
 ## [1.6.0] - 2026-03-23
 - Frontmatter blocks (title, date, tags) are formatted in the editor and rendered cleanly in preview
 - Markdown file links are clickable in preview mode — click to open linked documents
