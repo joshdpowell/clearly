@@ -3,6 +3,20 @@
   <channel>
     <title>Clearly</title>
     <item>
+      <title>Version 1.6.1</title>
+      <sparkle:version>1.6.1</sparkle:version>
+      <sparkle:shortVersionString>1.6.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <pubDate>Tue, 24 Mar 2026 00:49:58 +0000</pubDate>
+      <description><![CDATA[<ul><li>Markdown files are no longer greyed out in the Open panel on some systems</li></ul>]]></description>
+      <enclosure
+        url="https://github.com/Shpigford/clearly/releases/download/v1.6.1/Clearly.dmg"
+        sparkle:edSignature="c0HtJs4jfNd/XhQlXXQP7MrsagIywV09R7PRWumQw5OwmwZZdaOTd17ZtiORoYEy24TPhlvyvR9bBSRenuttAQ=="
+        length="6454753"
+        type="application/octet-stream"
+      />
+    </item>
+    <item>
       <title>Version 1.6.0</title>
       <sparkle:version>1.6.0</sparkle:version>
       <sparkle:shortVersionString>1.6.0</sparkle:shortVersionString>
