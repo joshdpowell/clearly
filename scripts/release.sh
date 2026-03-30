@@ -134,7 +134,6 @@ xcodebuild -project Clearly.xcodeproj \
   -configuration Release \
   -archivePath build/Clearly.xcarchive \
   archive \
-  CODE_SIGN_IDENTITY="$SIGNING_IDENTITY" \
   DEVELOPMENT_TEAM="$TEAM_ID" \
   MARKETING_VERSION="$VERSION" \
   CURRENT_PROJECT_VERSION="$VERSION"
