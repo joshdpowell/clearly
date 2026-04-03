@@ -3,6 +3,20 @@
   <channel>
     <title>Clearly</title>
     <item>
+      <title>Version 1.10.1</title>
+      <sparkle:version>1.10.1</sparkle:version>
+      <sparkle:shortVersionString>1.10.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <pubDate>Fri, 03 Apr 2026 10:34:24 +0000</pubDate>
+      <description><![CDATA[<ul><li>New documents open in front instead of behind existing windows</li><li>Outline panel no longer overlaps the preview in side-by-side mode</li></ul>]]></description>
+      <enclosure
+        url="https://github.com/Shpigford/clearly/releases/download/v1.10.1/Clearly.dmg"
+        sparkle:edSignature="8xW7wOCWKVht7zK04pp8EAuknBmZGDva3KQKfTJdPeGiZLmIf6UMOOvwnInWKT9Z/DFOoncZBgncDSHrRdVbCw=="
+        length="6849158"
+        type="application/octet-stream"
+      />
+    </item>
+    <item>
       <title>Version 1.10.0</title>
       <sparkle:version>1.10.0</sparkle:version>
       <sparkle:shortVersionString>1.10.0</sparkle:shortVersionString>
