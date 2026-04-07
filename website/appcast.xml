@@ -3,6 +3,20 @@
   <channel>
     <title>Clearly</title>
     <item>
+      <title>Version 1.11.0</title>
+      <sparkle:version>1.11.0</sparkle:version>
+      <sparkle:shortVersionString>1.11.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <pubDate>Tue, 07 Apr 2026 15:25:08 +0000</pubDate>
+      <description><![CDATA[<ul><li>Editor and preview now toggle in place at the same scroll position, replacing side-by-side mode</li><li>Copy code blocks in preview with a one-click button</li><li>Cursor stays put when typing quickly in the editor</li><li>Save scratchpad notes to a file with Cmd+S</li><li>Cmd+Q no longer quits the app when only scratchpads are open</li></ul>]]></description>
+      <enclosure
+        url="https://github.com/Shpigford/clearly/releases/download/v1.11.0/Clearly.dmg"
+        sparkle:edSignature="qyj+l/UQFbVKvV6ccTuEiO8cLDBydWNUAYHB3VMaJ3kz3+9uhbJtZ8LCnGLTpCs6xGuVYWBDciqoJfj9G8hsBw=="
+        length="6852132"
+        type="application/octet-stream"
+      />
+    </item>
+    <item>
       <title>Version 1.10.1</title>
       <sparkle:version>1.10.1</sparkle:version>
       <sparkle:shortVersionString>1.10.1</sparkle:shortVersionString>
