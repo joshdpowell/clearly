@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [1.12.0] - 2026-04-08
+- File explorer sidebar shows favorite locations and recent files for quick navigation
+
 ## [1.11.0] - 2026-04-07
 - Editor and preview now toggle in place at the same scroll position, replacing side-by-side mode
 - Copy code blocks in preview with a one-click button
