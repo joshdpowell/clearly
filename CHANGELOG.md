@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [1.13.0] - 2026-04-08
+- Create new untitled documents without saving them first
+- Bold and bold-italic text now renders visually in the editor instead of just showing markers
+- Pick custom icons for folders in the sidebar
+- Compact file explorer rows and refined sidebar layout for easier scanning
+
 ## [1.12.0] - 2026-04-08
 - File explorer sidebar shows favorite locations and recent files for quick navigation
 
