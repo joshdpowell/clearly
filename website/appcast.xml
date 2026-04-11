@@ -3,6 +3,20 @@
   <channel>
     <title>Clearly</title>
     <item>
+      <title>Version 1.15.0</title>
+      <sparkle:version>1.15.0</sparkle:version>
+      <sparkle:shortVersionString>1.15.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <pubDate>Sat, 11 Apr 2026 17:43:01 +0000</pubDate>
+      <description><![CDATA[<ul><li>Tables get captions, sortable columns, sticky headers, and a copy-as-TSV button</li><li>Code blocks get syntax highlighting for 27+ languages, line numbers, diff highlighting, and filename headers</li><li>Highlight text with ==marks==, write super^script^ and sub~script~, and use :emoji: shortcodes</li><li>15 types of callouts and admonitions, with foldable support</li><li>Auto-generated table of contents with [TOC]</li><li>Click any preview element to jump to its source, toggle task checkboxes inline, and view images in a lightbox</li><li>Heading anchor links and footnote popovers</li><li>Sample Document available under the Help menu</li><li>Now licensed under FSL-1.1-MIT (converts to MIT after two years)</li></ul>]]></description>
+      <enclosure
+        url="https://github.com/Shpigford/clearly/releases/download/v1.15.0/Clearly.dmg"
+        sparkle:edSignature="Q0h5bkE3ukpgU2jep9AFpPPbRbwP21L1mazR9p3lYedtOrplsEzAH9o0dAYoxjiFkW/dXk6gNWf0yf3aihAWBQ=="
+        length="8624309"
+        type="application/octet-stream"
+      />
+    </item>
+    <item>
       <title>Version 1.14.0</title>
       <sparkle:version>1.14.0</sparkle:version>
       <sparkle:shortVersionString>1.14.0</sparkle:shortVersionString>
